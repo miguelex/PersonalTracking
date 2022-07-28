@@ -10,21 +10,26 @@ using System.Windows.Forms;
 
 namespace PersonalTracking
 {
-    public partial class FrmTasksList : Form
+    public partial class FrmTask : Form
     {
-        public FrmTasksList()
+        public FrmTask()
         {
             InitializeComponent();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtUserNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void FrmTask_Load(object sender, EventArgs e)
         {
-            e.Handled = General.isNumber(e);
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
