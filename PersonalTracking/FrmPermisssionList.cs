@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace PersonalTracking
 {
-    public partial class FrmTasksList : Form
+    public partial class FrmPermisssionList : Form
     {
-        public FrmTasksList()
+        public FrmPermisssionList()
         {
             InitializeComponent();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void txtUserNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.Handled = General.isNumber(e);
         }
 
-        private void txtUserNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = General.isNumber(e);
         }
@@ -33,8 +33,8 @@ namespace PersonalTracking
         }
 
         private void btnNew_Click(object sender, EventArgs e)
-        {
-            FrmTask frm = new FrmTask();
+        { 
+            FrmPermission frm = new FrmPermission();
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
@@ -42,7 +42,7 @@ namespace PersonalTracking
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmTask frm = new FrmTask();
+            FrmPermission frm = new FrmPermission();
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
