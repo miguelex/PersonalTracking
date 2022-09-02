@@ -412,6 +412,7 @@
             this.Name = "FrmTasksList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tasks List";
+            this.Load += new System.EventHandler(this.FrmTasksList_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

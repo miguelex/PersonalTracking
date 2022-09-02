@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DAL;
+using DAL.DTO;
 
 namespace PersonalTracking
 {
@@ -46,6 +49,12 @@ namespace PersonalTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+        }
+
+        TaskDTO dto = new TaskDTO();
+        private void FrmTasksList_Load(object sender, EventArgs e)
+        {
+            dto = TaskBLL.GetAll();
         }
     }
 }

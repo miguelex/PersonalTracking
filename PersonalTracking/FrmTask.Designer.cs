@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtUserNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmTaskState = new System.Windows.Forms.ComboBox();
+            this.cmbTaskState = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
@@ -50,8 +50,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,6 +63,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 153);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(282, 297);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // panel2
             // 
@@ -76,15 +87,6 @@
             this.panel2.Size = new System.Drawing.Size(282, 153);
             this.panel2.TabIndex = 0;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(282, 297);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // cmbPosition
             // 
             this.cmbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,6 +95,7 @@
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(121, 28);
             this.cmbPosition.TabIndex = 3;
+            this.cmbPosition.SelectedIndexChanged += new System.EventHandler(this.cmbPosition_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -113,6 +116,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(121, 28);
             this.cmbDepartment.TabIndex = 1;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -181,14 +185,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "User Nº";
             // 
-            // cmTaskState
+            // cmbTaskState
             // 
-            this.cmTaskState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmTaskState.FormattingEnabled = true;
-            this.cmTaskState.Location = new System.Drawing.Point(152, 125);
-            this.cmTaskState.Name = "cmTaskState";
-            this.cmTaskState.Size = new System.Drawing.Size(172, 28);
-            this.cmTaskState.TabIndex = 8;
+            this.cmbTaskState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTaskState.FormattingEnabled = true;
+            this.cmbTaskState.Location = new System.Drawing.Point(152, 125);
+            this.cmbTaskState.Name = "cmbTaskState";
+            this.cmbTaskState.Size = new System.Drawing.Size(172, 28);
+            this.cmbTaskState.TabIndex = 8;
             // 
             // label9
             // 
@@ -199,7 +203,6 @@
             this.label9.Size = new System.Drawing.Size(96, 20);
             this.label9.TabIndex = 7;
             this.label9.Text = "Task State";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label6
             // 
@@ -258,6 +261,7 @@
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmTask
             // 
@@ -266,7 +270,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cmTaskState);
+            this.Controls.Add(this.cmbTaskState);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.label7);
@@ -284,9 +288,9 @@
             this.Text = "Task";
             this.Load += new System.EventHandler(this.FrmTask_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,7 +311,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmTaskState;
+        private System.Windows.Forms.ComboBox cmbTaskState;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTitle;
