@@ -81,6 +81,7 @@
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -91,6 +92,7 @@
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cmbPosition
             // 
@@ -119,6 +121,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(121, 28);
             this.cmbDepartment.TabIndex = 7;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -137,7 +140,6 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(100, 26);
             this.txtSurname.TabIndex = 5;
-            this.txtSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserNo_KeyPress);
             // 
             // label3
             // 
@@ -156,7 +158,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 26);
             this.txtName.TabIndex = 3;
-            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserNo_KeyPress);
             // 
             // label1
             // 
@@ -189,6 +190,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 100);
@@ -262,6 +264,7 @@
             this.Name = "FrmEmployeeList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employeer List";
+            this.Load += new System.EventHandler(this.FrmEmployeeList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
