@@ -133,6 +133,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserStatic.cs" />
     <EmbeddedResource Include="FrmDeparment.resx">
       <DependentUpon>FrmDeparment.cs</DependentUpon>
     </EmbeddedResource>
