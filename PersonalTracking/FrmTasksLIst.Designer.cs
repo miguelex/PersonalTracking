@@ -32,7 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.cmTaskState = new System.Windows.Forms.ComboBox();
+            this.cmbTaskState = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbDelivery = new System.Windows.Forms.RadioButton();
@@ -82,7 +82,7 @@
             // 
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Controls.Add(this.cmTaskState);
+            this.panel3.Controls.Add(this.cmbTaskState);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.DTEnd);
@@ -116,15 +116,16 @@
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // cmTaskState
+            // cmbTaskState
             // 
-            this.cmTaskState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmTaskState.FormattingEnabled = true;
-            this.cmTaskState.Location = new System.Drawing.Point(122, 121);
-            this.cmTaskState.Name = "cmTaskState";
-            this.cmTaskState.Size = new System.Drawing.Size(121, 28);
-            this.cmTaskState.TabIndex = 6;
+            this.cmbTaskState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTaskState.FormattingEnabled = true;
+            this.cmbTaskState.Location = new System.Drawing.Point(122, 121);
+            this.cmbTaskState.Name = "cmbTaskState";
+            this.cmbTaskState.Size = new System.Drawing.Size(121, 28);
+            this.cmbTaskState.TabIndex = 6;
             // 
             // label9
             // 
@@ -260,6 +261,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(121, 28);
             this.cmbDepartment.TabIndex = 7;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -394,6 +396,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 187);
@@ -446,7 +449,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmTaskState;
+        private System.Windows.Forms.ComboBox cmbTaskState;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbDelivery;

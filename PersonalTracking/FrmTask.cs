@@ -85,7 +85,7 @@ namespace PersonalTracking
             txtUserNo.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            task.Employe_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            task.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
         }
 
         private void cmbPosition_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,10 +98,10 @@ namespace PersonalTracking
             }
         }
 
-        Tasks task = new Tasks();
+        TASK task = new TASK();
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (task.Employe_id == 0)
+            if (task.EmployeeID == 0)
             {
                 MessageBox.Show("Please select an employee");
             }
@@ -111,15 +111,15 @@ namespace PersonalTracking
                 MessageBox.Show("Content is empty");
             else
             {
-                task.taskTitle = txtTitle.Text;
-                task.taskContent = txtContent.Text;
-                task.tasStartDate = DateTime.Today;
-                task.taskState = Convert.ToBoolean(1);
+                task.TaskTitle = txtTitle.Text;
+                task.TaskContent = txtContent.Text;
+                task.TaskStartDate = DateTime.Today;
+                task.TaskState = 1;
                 TaskBLL.AddTask(task);
                 MessageBox.Show("Task was added");
                 txtTitle.Clear();
                 txtContent.Clear();
-                task = new Tasks();
+                task = new TASK();
             }
         }
     }

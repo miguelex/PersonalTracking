@@ -54,9 +54,9 @@ namespace DAL
     partial void InsertSalary(Salary instance);
     partial void UpdateSalary(Salary instance);
     partial void DeleteSalary(Salary instance);
-    partial void InsertTasks(Tasks instance);
-    partial void UpdateTasks(Tasks instance);
-    partial void DeleteTasks(Tasks instance);
+    partial void InsertTASK(TASK instance);
+    partial void UpdateTASK(TASK instance);
+    partial void DeleteTASK(TASK instance);
     #endregion
 		
 		public EmmployeeDataClassDataContext() : 
@@ -153,11 +153,11 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Tasks> Tasks
+		public System.Data.Linq.Table<TASK> TASK
 		{
 			get
 			{
-				return this.GetTable<Tasks>();
+				return this.GetTable<TASK>();
 			}
 		}
 	}
@@ -1306,25 +1306,25 @@ namespace DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tasks")]
-	public partial class Tasks : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TASK")]
+	public partial class TASK : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private System.Nullable<int> _Employe_id;
+		private int _EmployeeID;
 		
-		private string _taskTitle;
+		private string _TaskTitle;
 		
-		private string _taskContent;
+		private string _TaskContent;
 		
-		private System.Nullable<System.DateTime> _tasStartDate;
+		private System.Nullable<System.DateTime> _TaskStartDate;
 		
-		private System.Nullable<System.DateTime> _taskDeliveredDate;
+		private System.Nullable<System.DateTime> _TaskDeliveryDate;
 		
-		private System.Nullable<bool> _taskState;
+		private int _TaskState;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1332,21 +1332,21 @@ namespace DAL
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnEmploye_idChanging(System.Nullable<int> value);
-    partial void OnEmploye_idChanged();
-    partial void OntaskTitleChanging(string value);
-    partial void OntaskTitleChanged();
-    partial void OntaskContentChanging(string value);
-    partial void OntaskContentChanged();
-    partial void OntasStartDateChanging(System.Nullable<System.DateTime> value);
-    partial void OntasStartDateChanged();
-    partial void OntaskDeliveredDateChanging(System.Nullable<System.DateTime> value);
-    partial void OntaskDeliveredDateChanged();
-    partial void OntaskStateChanging(System.Nullable<bool> value);
-    partial void OntaskStateChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnTaskTitleChanging(string value);
+    partial void OnTaskTitleChanged();
+    partial void OnTaskContentChanging(string value);
+    partial void OnTaskContentChanged();
+    partial void OnTaskStartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnTaskStartDateChanged();
+    partial void OnTaskDeliveryDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnTaskDeliveryDateChanged();
+    partial void OnTaskStateChanging(int value);
+    partial void OnTaskStateChanged();
     #endregion
 		
-		public Tasks()
+		public TASK()
 		{
 			OnCreated();
 		}
@@ -1371,122 +1371,122 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Employe_id", DbType="Int")]
-		public System.Nullable<int> Employe_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
 		{
 			get
 			{
-				return this._Employe_id;
+				return this._EmployeeID;
 			}
 			set
 			{
-				if ((this._Employe_id != value))
+				if ((this._EmployeeID != value))
 				{
-					this.OnEmploye_idChanging(value);
+					this.OnEmployeeIDChanging(value);
 					this.SendPropertyChanging();
-					this._Employe_id = value;
-					this.SendPropertyChanged("Employe_id");
-					this.OnEmploye_idChanged();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_taskTitle", DbType="VarChar(50)")]
-		public string taskTitle
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskTitle", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string TaskTitle
 		{
 			get
 			{
-				return this._taskTitle;
+				return this._TaskTitle;
 			}
 			set
 			{
-				if ((this._taskTitle != value))
+				if ((this._TaskTitle != value))
 				{
-					this.OntaskTitleChanging(value);
+					this.OnTaskTitleChanging(value);
 					this.SendPropertyChanging();
-					this._taskTitle = value;
-					this.SendPropertyChanged("taskTitle");
-					this.OntaskTitleChanged();
+					this._TaskTitle = value;
+					this.SendPropertyChanged("TaskTitle");
+					this.OnTaskTitleChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_taskContent", DbType="VarChar(255)")]
-		public string taskContent
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskContent", DbType="VarChar(MAX)")]
+		public string TaskContent
 		{
 			get
 			{
-				return this._taskContent;
+				return this._TaskContent;
 			}
 			set
 			{
-				if ((this._taskContent != value))
+				if ((this._TaskContent != value))
 				{
-					this.OntaskContentChanging(value);
+					this.OnTaskContentChanging(value);
 					this.SendPropertyChanging();
-					this._taskContent = value;
-					this.SendPropertyChanged("taskContent");
-					this.OntaskContentChanged();
+					this._TaskContent = value;
+					this.SendPropertyChanged("TaskContent");
+					this.OnTaskContentChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tasStartDate", DbType="Date")]
-		public System.Nullable<System.DateTime> tasStartDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskStartDate", DbType="Date")]
+		public System.Nullable<System.DateTime> TaskStartDate
 		{
 			get
 			{
-				return this._tasStartDate;
+				return this._TaskStartDate;
 			}
 			set
 			{
-				if ((this._tasStartDate != value))
+				if ((this._TaskStartDate != value))
 				{
-					this.OntasStartDateChanging(value);
+					this.OnTaskStartDateChanging(value);
 					this.SendPropertyChanging();
-					this._tasStartDate = value;
-					this.SendPropertyChanged("tasStartDate");
-					this.OntasStartDateChanged();
+					this._TaskStartDate = value;
+					this.SendPropertyChanged("TaskStartDate");
+					this.OnTaskStartDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_taskDeliveredDate", DbType="Date")]
-		public System.Nullable<System.DateTime> taskDeliveredDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskDeliveryDate", DbType="Date")]
+		public System.Nullable<System.DateTime> TaskDeliveryDate
 		{
 			get
 			{
-				return this._taskDeliveredDate;
+				return this._TaskDeliveryDate;
 			}
 			set
 			{
-				if ((this._taskDeliveredDate != value))
+				if ((this._TaskDeliveryDate != value))
 				{
-					this.OntaskDeliveredDateChanging(value);
+					this.OnTaskDeliveryDateChanging(value);
 					this.SendPropertyChanging();
-					this._taskDeliveredDate = value;
-					this.SendPropertyChanged("taskDeliveredDate");
-					this.OntaskDeliveredDateChanged();
+					this._TaskDeliveryDate = value;
+					this.SendPropertyChanged("TaskDeliveryDate");
+					this.OnTaskDeliveryDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_taskState", DbType="Bit")]
-		public System.Nullable<bool> taskState
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskState", DbType="Int NOT NULL")]
+		public int TaskState
 		{
 			get
 			{
-				return this._taskState;
+				return this._TaskState;
 			}
 			set
 			{
-				if ((this._taskState != value))
+				if ((this._TaskState != value))
 				{
-					this.OntaskStateChanging(value);
+					this.OnTaskStateChanging(value);
 					this.SendPropertyChanging();
-					this._taskState = value;
-					this.SendPropertyChanged("taskState");
-					this.OntaskStateChanged();
+					this._TaskState = value;
+					this.SendPropertyChanged("TaskState");
+					this.OnTaskStateChanged();
 				}
 			}
 		}

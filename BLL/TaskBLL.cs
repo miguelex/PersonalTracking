@@ -22,7 +22,7 @@ namespace BLL
             return taskdto;
         }
 
-        public static void AddTask(Tasks task)
+        public static void AddTask(TASK task)
         {
             TaskDAO.AddTask(task);
         }
