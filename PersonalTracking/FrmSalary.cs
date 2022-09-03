@@ -94,5 +94,14 @@ namespace PersonalTracking
                 salary = new Salary();
             }
         }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combofull)
+            {
+                cmbPosition.DataSource = dto.Positions.Where(x => x.Department_id ==
+                Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            }
+        }
     }
 }
