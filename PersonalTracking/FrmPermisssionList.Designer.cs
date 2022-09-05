@@ -61,6 +61,8 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.State = new System.Windows.Forms.Label();
+            this.cmbState = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +85,8 @@
             // 
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.DTEnd);
+            this.panel3.Controls.Add(this.cmbState);
+            this.panel3.Controls.Add(this.State);
             this.panel3.Controls.Add(this.DTStart);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
@@ -162,6 +166,7 @@
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -172,6 +177,7 @@
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtAmount
             // 
@@ -405,12 +411,32 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 191);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 178);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // State
+            // 
+            this.State.AutoSize = true;
+            this.State.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.State.Location = new System.Drawing.Point(2, 161);
+            this.State.Name = "State";
+            this.State.Size = new System.Drawing.Size(53, 20);
+            this.State.TabIndex = 16;
+            this.State.Text = "State";
+            // 
+            // cmbState
+            // 
+            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Location = new System.Drawing.Point(117, 157);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(130, 28);
+            this.cmbState.TabIndex = 3;
             // 
             // FrmPermisssionList
             // 
@@ -423,6 +449,7 @@
             this.Name = "FrmPermisssionList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permisssion List";
+            this.Load += new System.EventHandler(this.FrmPermisssionList_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -471,5 +498,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbDelivery;
         private System.Windows.Forms.RadioButton rbStart;
+        private System.Windows.Forms.ComboBox cmbState;
+        private System.Windows.Forms.Label State;
     }
 }
