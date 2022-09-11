@@ -23,9 +23,18 @@ namespace BLL
             return dto;
         }
 
-        public static void AddSalary(Salary salary)
+        public static void AddSalary(Salary salary, bool control)
         {
             SalaryDAO.AddSalary(salary);
+            if (control)
+                EmployeeDAO.UpdateEmployee((int)salary.Employe_id, (int)salary.Amount);
+        }
+
+        public static void UpdateSalary(Salary salary, bool control)
+        {
+            SalaryDAO.UpdateSalary(salary);
+            if (control)
+                EmployeeDAO.UpdateEmployee((int)salary.Employe_id, (int)salary.Amount);
         }
     }
 }

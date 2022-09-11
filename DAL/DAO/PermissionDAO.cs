@@ -61,8 +61,8 @@ namespace DAL.DAO
                 dto.Surname = item.Surname;
                 dto.EmployeeID = Convert.ToInt32(item.employeeID);
                 dto.PermissionDayAmount = Convert.ToInt32(item.Dayamount);
-                dto.StartDate = item.startdate;
-                dto.EndDate = item.endDate;
+                dto.StartDate = (DateTime)item.startdate;
+                dto.EndDate = (DateTime)item.endDate;
                 dto.DepartmentID = Convert.ToInt32(item.departmentID);
                 dto.PositionID = Convert.ToInt32(item.positionID);
                 dto.State = Convert.ToInt32(item.stateID);
@@ -72,6 +72,39 @@ namespace DAL.DAO
                 permissions.Add(dto);
             }
             return permissions;
+        }
+
+        public static void UpdatePermission(int permissionID, int approved)
+        {
+            try
+            {
+                Permisions pr = db.Permisions.First(x => x.ID == permissionID);
+                pr.PermisionState = approved;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public static void UpdatePermission(Permisions permission)
+        {
+            try
+            {
+                Permisions pr = db.Permisions.First(x => x.ID == permission.ID);
+                pr.PermisionStart = permission.PermisionStart;
+                pr.PermisionEnd = permission.PermisionEnd;
+                pr.PermisionExplanation = permission.PermisionExplanation;
+                pr.permisionDay = permission.permisionDay;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

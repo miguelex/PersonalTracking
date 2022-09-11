@@ -47,12 +47,21 @@ namespace PersonalTracking
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmPermission frm = new FrmPermission();
-            this.Hide();
-            frm.ShowDialog();
-            this.Visible = true;
-            FillAllData();
-            CleanFilters();
+            if (detail.PermissionID == 0)
+                MessageBox.Show("please select a permission from table");
+            else
+            {
+
+                FrmPermission frm = new FrmPermission();
+                frm.isUpdate = true;
+                frm.detail = detail;
+                this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                FillAllData();
+                CleanFilters();
+
+            }
         }
 
         void FillAllData()
@@ -151,6 +160,34 @@ namespace PersonalTracking
             cmbState.SelectedIndex = -1;
             txtAmount.Clear();
             dataGridView1.DataSource = dto.Permissions;
+        }
+
+        PermissionDetailDTO detail = new PermissionDetailDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.PermissionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            detail.StartDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detail.EndDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detail.Explanation = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
+            detail.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detail.State = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detail.PermissionDayAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            PermissionBLL.UpdatePermission(detail.PermissionID, PermissionStates.Approved);
+            MessageBox.Show("Approved");
+            FillAllData();
+            CleanFilters();
+        }
+
+        private void btnDisaoorive_Click(object sender, EventArgs e)
+        {
+            PermissionBLL.UpdatePermission(detail.PermissionID, PermissionStates.Disapproved);
+            MessageBox.Show("Disapproved");
+            FillAllData();
+            CleanFilters();
         }
     }
 }
