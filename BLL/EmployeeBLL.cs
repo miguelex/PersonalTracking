@@ -38,5 +38,10 @@ namespace BLL
         {
             return EmployeeDAO.GetEmployees(v, text);
         }
+
+        public static void UpdateEmployee(Employe employee)
+        {
+            EmployeeDAO.UpdateEmployee(employee);
+        }
     }
 }

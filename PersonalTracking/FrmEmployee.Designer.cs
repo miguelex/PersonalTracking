@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chAdmin = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCheck = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.chAdmin);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCheck);
@@ -74,16 +74,16 @@
             this.panel1.Size = new System.Drawing.Size(900, 68);
             this.panel1.TabIndex = 0;
             // 
-            // checkBox1
+            // chAdmin
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(655, 17);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 24);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "is Admin?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chAdmin.AutoSize = true;
+            this.chAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chAdmin.Location = new System.Drawing.Point(655, 17);
+            this.chAdmin.Name = "chAdmin";
+            this.chAdmin.Size = new System.Drawing.Size(106, 24);
+            this.chAdmin.TabIndex = 5;
+            this.chAdmin.Text = "is Admin?";
+            this.chAdmin.UseVisualStyleBackColor = true;
             // 
             // txtPassword
             // 
@@ -377,7 +377,7 @@
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chAdmin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
