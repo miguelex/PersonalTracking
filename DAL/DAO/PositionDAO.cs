@@ -56,6 +56,21 @@ namespace DAL.DAO
                 
         }
 
+        public static void DeletePosition(int iD)
+        {
+            try
+            {
+                EmpPosition position = db.EmpPosition.First(x => x.ID == iD);
+                db.EmpPosition.DeleteOnSubmit(position);
+                db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public static void UpdatePosition(EmpPosition position)
         {
             try

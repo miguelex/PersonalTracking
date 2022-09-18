@@ -187,5 +187,38 @@ namespace PersonalTracking
             detail.TaskStartDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
             detail.TaskDeliveryDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete this task", "Warning", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                TaskBLL.DeleteTask(detail.TaskID);
+                MessageBox.Show("Task was Deleted");
+                FillAllData();
+                CleanFilters();
+
+            }
+        }
+
+       private void btnApprove_Click(object sender, EventArgs e)
+        {
+            /*if (UserStatic.isAdmin && detail.taskStateID == TasksStates.OnEmployee && detail.EmployeeID != UserStatic.EmployeeID)
+                MessageBox.Show("Before approve a task employee have to delivery task");
+            else if (UserStatic.isAdmin && detail.taskStateID == TasksStates.Approved)
+                MessageBox.Show("This task is already approved");
+            else if (!UserStatic.isAdmin && detail.taskStateID == TasksStates.Delivered)
+                MessageBox.Show("This task is already delivered");
+            else if (!UserStatic.isAdmin && detail.taskStateID == TasksStates.Approved)
+                MessageBox.Show("This task is already approved");
+            else
+            {
+                TaskBLL.ApproveTask(detail.TaskID, UserStatic.isAdmin);
+                MessageBox.Show("Task was Updated");
+                FillAllData();
+                CleanFilters();
+
+            }*/
+        }
     }
 }
