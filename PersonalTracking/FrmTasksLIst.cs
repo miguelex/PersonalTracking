@@ -229,5 +229,10 @@ namespace PersonalTracking
                 CleanFilters();
             }
         }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExel.ExcelExport(dataGridView1);
+        }
     }
 }

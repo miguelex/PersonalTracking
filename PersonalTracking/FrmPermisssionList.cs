@@ -116,7 +116,7 @@ namespace PersonalTracking
                 btnApprove.Hide();
                 btnDisapprove.Hide();
                 btnDelete.Hide();
-                btnClose.Location = new Point(423, 18);
+                btnClose.Location = new Point(484, 26);
             }
 
         }
@@ -218,6 +218,11 @@ namespace PersonalTracking
                 }
 
             }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExel.ExcelExport(dataGridView1);
         }
     }
 }
