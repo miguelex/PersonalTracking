@@ -15,6 +15,7 @@ A continuación se adjuntan algunas capturas de la aplicación:
 ![(image](./images/employees.png "Listado de empleados")
 ![(image](./images/newemploye.png "Pantalla para anadir un empleado")
 ![(image](./images/permissions.png "Listado de permisos")
-![(image](./images/tasks.png "Listado de tareas")![(image](./images/salary.png "Listado de salarios")
+![(image](./images/tasks.png "Listado de tareas")
+![(image](./images/salary.png "Listado de salarios")
 
 
