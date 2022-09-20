@@ -58,7 +58,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnDisaoorive = new System.Windows.Forms.Button();
+            this.btnDisapprove = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -355,7 +355,7 @@
             // 
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnDisaoorive);
+            this.panel2.Controls.Add(this.btnDisapprove);
             this.panel2.Controls.Add(this.btnApprove);
             this.panel2.Controls.Add(this.btnNew);
             this.panel2.Controls.Add(this.btnUpdate);
@@ -387,16 +387,16 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnDisaoorive
+            // btnDisapprove
             // 
-            this.btnDisaoorive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisaoorive.Location = new System.Drawing.Point(175, 26);
-            this.btnDisaoorive.Name = "btnDisaoorive";
-            this.btnDisaoorive.Size = new System.Drawing.Size(109, 49);
-            this.btnDisaoorive.TabIndex = 1;
-            this.btnDisaoorive.Text = "Disapprove";
-            this.btnDisaoorive.UseVisualStyleBackColor = true;
-            this.btnDisaoorive.Click += new System.EventHandler(this.btnDisaoorive_Click);
+            this.btnDisapprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisapprove.Location = new System.Drawing.Point(175, 26);
+            this.btnDisapprove.Name = "btnDisapprove";
+            this.btnDisapprove.Size = new System.Drawing.Size(109, 49);
+            this.btnDisapprove.TabIndex = 1;
+            this.btnDisapprove.Text = "Disapprove";
+            this.btnDisapprove.UseVisualStyleBackColor = true;
+            this.btnDisapprove.Click += new System.EventHandler(this.btnDisaoorive_Click);
             // 
             // btnApprove
             // 
@@ -477,7 +477,7 @@
         private System.Windows.Forms.Panel pnlAdmin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnDisaoorive;
+        private System.Windows.Forms.Button btnDisapprove;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnUpdate;

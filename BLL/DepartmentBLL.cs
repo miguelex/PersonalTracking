@@ -27,7 +27,7 @@ namespace BLL
 
         public static void DeleteDepartment(int iD)
         {
-            throw new NotImplementedException();
+            DepartmentDAO.DeleteDepartment(iD);
         }
     }
 }

@@ -84,10 +84,10 @@ namespace DAL.DAO
             try
             {
                 TASK tsk = db.TASK.First(x => x.ID == taskID);
-                if (isAdmin) ;
-                //tsk.TaskState = TasksStates.Approved;
+                if (isAdmin) 
+                    tsk.TaskState = TaskStates.Approved;
                 else
-                    //tsk.TaskState = TasksStates.Delivered;
+                    tsk.TaskState = TaskStates.Delivered;
                     tsk.TaskDeliveryDate = DateTime.Today;
                 db.SubmitChanges();
             }
